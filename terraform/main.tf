@@ -18,7 +18,7 @@ module "aft" {
 
   # Terraform variables
   terraform_version      = "1.11.4"
-  terraform_distribution = "latest"
+  terraform_distribution = "oss"
 
   # VCS variables (only if you are not using AWS CodeCommit)
   vcs_provider                                  = "github"
