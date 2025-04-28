@@ -5,30 +5,25 @@ module "aft" {
   source = "github.com/aws-ia/terraform-aws-control_tower_account_factory"
 
   # Required variables
-  ct_management_account_id  = "<ct_management_account_id>"
-  log_archive_account_id    = "<log_archive_account_id>"
-  audit_account_id          = "<audit_account_id>"
-  aft_management_account_id = "<aft_management_account_id>"
-  ct_home_region            = "<ct_home_region>"
-
-  # Optional variables
-  tf_backend_secondary_region = "<tf_backend_secondary_region>"
-  aft_metrics_reporting       = "<false|true>"
+  ct_management_account_id  = "000025530748"
+  log_archive_account_id    = "125370714256"
+  audit_account_id          = "228209566540"
+  aft_management_account_id = "795633297806"
+  ct_home_region            = "us-east-2"
 
   # AFT Feature flags
-  aft_feature_cloudtrail_data_events      = "<false|true>"
-  aft_feature_enterprise_support          = "<false|true>"
-  aft_feature_delete_default_vpcs_enabled = "<false|true>"
+  aft_feature_cloudtrail_data_events      = "false"
+  aft_feature_enterprise_support          = "false"
+  aft_feature_delete_default_vpcs_enabled = "false"
 
   # Terraform variables
-  terraform_version      = "<terraform_version>"
-  terraform_distribution = "<terraform_distribution>"
+  terraform_version      = "1.11.4"
+  terraform_distribution = "latest"
 
-  # VCS variables 
-  # vcs_provider                                  = "<vcs_provider>" (only if you are not using AWS CodeCommit)
-  # account_request_repo_name                     = "<account_request_repo_name>"
-  # account_customizations_repo_name              = "<account_customizations_repo_name>"
-  # account_provisioning_customizations_repo_name = "<account_provisioning_customizations_repo_name>"
-  # global_customizations_repo_name               = "<global_customizations_repo_name>"
-
+  # VCS variables (only if you are not using AWS CodeCommit)
+  vcs_provider                                  = "github"
+  account_request_repo_name                     = "gustafst/aft-account-request"
+  account_customizations_repo_name              = "gustafst/aft-account-customizations"
+  account_provisioning_customizations_repo_name = "gustafst/aft-account-provisioning-customizations"
+  global_customizations_repo_name               = "gustafst/aft-global-customizations"
 }
